@@ -4,13 +4,15 @@
 
 ## 思路
 
-最新版的 vscode Haskell 插件自带 [Haskell Language Server](https://link.zhihu.com/?target=https%3A//github.com/haskell/haskell-language-server) 的 binary 
+最新版的 vscode Haskell 插件自带 Haskell Language Server 的 binary 
 
 先在vscode里装好haskell这个插件
 
 再装个 GHC 和 Cabal/Stack 就好
 
 装GHC的时候要注意版本不能太高
+
+似乎这样的话hlint之类的插件也不用装了诶
 
 
 
@@ -67,7 +69,7 @@ package-indices:
         ignore-expiry: no
 ```
 
-如果修改sr文件夹里的yaml文件出现语法报错，修改的时候可参考官网的模板
+如果修改yaml文件出现语法报错，修改的时候可参考官网的模板（报错的时候会给模板链接
 
 
 
@@ -77,9 +79,11 @@ package-indices:
 
 vscode里的haskell插件只支持部分版本的ghc
 
-具体支持哪些版本，可以在haskell插件的github（https://github.com/haskell/vscode-haskell#supported-ghc-versions）的**Supported GHC versions**这个地方找到
+```text
+[Markdown语法](https://markdown.com.cn "最好的markdown教程")。
+```
 
-也可以在haskell-language-server插件的github（https://github.com/haskell/haskell-language-server#download-the-source-code）
+具体支持哪些版本，可以在haskell插件的[github主页](https://github.com/haskell/vscode-haskell#supported-ghc-versions )的**Supported GHC versions**这个地方找到
 
 ```
 choco install ghc --version=8.10.4
@@ -97,7 +101,9 @@ choco uninstall ghc --version=x.x.x
 $ stack config set resolver lts-9
 ```
 
-理论上也可以从ghc的官网下载，但不是很懂下载完应该怎么操作，所以还是选择了choco
+理论上也可以从ghc的官网下载（但不是很懂下载完应该怎么操作，所以还是选择了choco
+
+
 
 #### 验证ghc装好了没
 
@@ -113,7 +119,7 @@ $ stack exec -- ghc --version
 The Glorious Glasgow Haskell Compilation System, version 8.8.4
 ```
 
-进入交互式的ghci
+进入ghci
 
 ```
 $ stack exec -- ghci
@@ -123,11 +129,10 @@ $ stack exec -- ghci
 
 ```
 GHCi, version 8.8.3: https://www.haskell.org/ghc/  :? for help
-Prelude> :q
-Leaving GHCi.
+Prelude>
 ```
 
-
+ghci是交互式的
 
 
 
