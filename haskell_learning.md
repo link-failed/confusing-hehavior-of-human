@@ -34,7 +34,7 @@ Prelude> 1 + 5
 
 
 
-## 语法
+## 语法（不完整）
 
 ### <font color='orange'>list</font>
 
@@ -327,6 +327,148 @@ ghci> zip [1..] ["apple", "orange", "cherry", "mango"]
 ### Pattern matching
 
 
+
+
+
+## <font color='orange'>Recursion</font>
+
+
+
+
+
+## <font color='orange'>Higher order functions</font>
+
+### Curried functions
+
+* All the functions that accepted *several parameters*
+
+* space is sort of like an operator and it has the highest precedence
+
+  ```haskell
+  ghci> max 4 5  
+  5  
+  ghci> (max 4) 5  
+  5
+  ```
+
+* 函数可以取另一个函数做参数，也可以返回函数
+
+* 函数不是`Show`类型类的实例，所以我们不能得到表示一函数内容的字符串
+
+  
+
+### partial functions
+
+* zipWith
+
+  ```
+  zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]   
+  zipWith' _ [] _ = []   
+  zipWith' _ _ [] = []   
+  zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
+  ```
+
+* flip
+
+  ```
+  flip' :: (a -> b -> c) -> b -> a -> c   
+  flip' f y x = f x y
+  ```
+
+  ```
+  ghci> flip' zip [1,2,3,4,5] "hello"   
+  [('h',1),('e',2),('l',3),('l',4),('o',5)]   
+  ghci> zipWith (flip' div) [2,2..] [10,8,6,4,2]   
+  [5,4,3,2,1]
+  ```
+
+  * 利用了柯里函数的右结合性
+
+* `map (+3) [1,6,3,2]`and `map (\x -> x + 3) [1,6,3,2]` are equivalent 
+
+### map, filter
+
+* map取一个函数和List做参数，对列表内的每一个元素都执行一遍函数
+
+  ```
+  map :: (a -> b) -> [a] -> [b]   
+  map _ [] = []   
+  map f (x:xs) = f x : map f xs
+  ```
+
+* filter函数取一个限制条件和一个List，返回该List中所有符合该条件的元素
+
+  ```
+  filter :: (a -> Bool) -> [a] -> [a]   
+  filter _ [] = []   
+  filter p (x:xs)    
+      | p x       = x : filter p xs   
+      | otherwise = filter p xs
+  ```
+
+
+
+
+
+## <font color='orange'>module</font>
+
+* 在GHCi中装载模块
+
+  ```
+  ghci> :m Data.List Data.Map Data.Set
+  ```
+
+### Data.List
+
+#### intersperse
+
+* 取一个元素与List作参数，并将该元素置于List中每对元素的中间
+
+  ```
+  ghci> intersperse '.' "MONKEY"   
+  "M.O.N.K.E.Y"   
+  ghci> intersperse 0 [1,2,3,4,5,6]   
+  [1,0,2,0,3,0,4,0,5,0,6]
+  ```
+
+#### intercalate
+
+* 将第一个List交叉插入第二个List中间
+
+  ```
+  ghci> intercalate " " ["hey","there","guys"]  "hey there guys"
+  ```
+
+#### transpose
+
+* 反转一组List的List
+
+  ```
+  ghci> transpose [[1,2,3],[4,5,6],[7,8,9]]   
+  [[1,4,7],[2,5,8],[3,6,9]]
+  ```
+
+#### concat
+
+* 把一组List连接为一个List
+
+  ```
+  ghci> concat ["foo","bar","car"]   
+  "foobarcar"
+  ghci> concat [[3,4,5],[2,3,4],[2,1,1]]   
+  [3,4,5,2,3,4,2,1,1]
+  ```
+
+  * 它相当于移除一级嵌套。若要彻底地连接其中的元素，`concat`它两次才行
+
+#### concatMap
+
+* 与map一个List之后再concat它等价.
+
+  ```
+  ghci> concatMap (replicate 4) [1..3]   
+  [1,1,1,1,2,2,2,2,3,3,3,3]
+  ```
 
 ## <font color='orange'>reference</font>
 
