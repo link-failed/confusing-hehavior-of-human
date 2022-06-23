@@ -1,0 +1,4 @@
+"D:\IDEs\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\99288\Desktop\Calcu
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/99288/Desktop/Calcu/cmake-build-debug

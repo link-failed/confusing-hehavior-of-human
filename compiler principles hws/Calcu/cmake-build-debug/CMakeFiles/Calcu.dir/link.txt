@@ -1,0 +1,3 @@
+"D:\IDEs\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Calcu.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\ar.exe cr CMakeFiles\Calcu.dir/objects.a @CMakeFiles\Calcu.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\Calcu.dir/objects.a -Wl,--no-whole-archive -o Calcu.exe -Wl,--out-implib,libCalcu.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Calcu.dir\linklibs.rsp

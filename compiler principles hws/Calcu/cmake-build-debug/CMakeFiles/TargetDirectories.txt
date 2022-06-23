@@ -1,0 +1,3 @@
+C:/Users/99288/Desktop/Calcu/cmake-build-debug/CMakeFiles/Calcu.dir
+C:/Users/99288/Desktop/Calcu/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/99288/Desktop/Calcu/cmake-build-debug/CMakeFiles/rebuild_cache.dir
