@@ -1,0 +1,3 @@
+"D:\IDEs\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\CYKAlgorithm.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\ar.exe cr CMakeFiles\CYKAlgorithm.dir/objects.a @CMakeFiles\CYKAlgorithm.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\CYKAlgorithm.dir/objects.a -Wl,--no-whole-archive -o CYKAlgorithm.exe -Wl,--out-implib,libCYKAlgorithm.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CYKAlgorithm.dir\linklibs.rsp

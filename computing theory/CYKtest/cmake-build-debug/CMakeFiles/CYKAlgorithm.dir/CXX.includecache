@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/99288/Desktop/CYKtest/include/CNF.h
+iostream
+-
+string
+-
+vector
+-
+set
+-
+
+C:/Users/99288/Desktop/CYKtest/src/CYKAlgorithm.cpp
+string
+-
+iostream
+-
+fstream
+-
+../include/CNF.h
+C:/Users/99288/Desktop/CYKtest/include/CNF.h
+
