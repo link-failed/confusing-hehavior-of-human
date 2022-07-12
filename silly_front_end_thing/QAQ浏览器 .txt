@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+
+        input, button {
+        border: 0 none;
+        padding: 0;
+        outline-style: none;
+        }
+
+        .search {
+        margin: 280px auto;
+        width: 300px;
+        height: 60px;
+        overflow: hidden;
+        }
+
+        .search input {
+        float: left;
+        width: 208px;
+        height: 60px;
+        background: rgb(228, 228, 228);
+        padding-left: 10px;
+        padding-right: 10px;
+        color: rgb(106, 94, 133);
+        font-size: 25px;
+        border-radius: 7px;
+        }
+
+        .search button {
+        float: left;
+        height: 60px;
+        width: 70px;
+        background: rgb(158, 211, 165);
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 7px;
+        }
+    </style>
+    <title>ÏÉÅ®×¨ÊôËÑË÷ÒýÇæ</title>
+    <body>
+        <div class="search">
+            <input type="text" id="inp">
+            <button id="btn">ÏÉÅ®ËÑË÷</button>
+        </div>
+
+        <script>
+            var oInp = document.getElementById('inp');
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function () {
+                Search();
+            }
+
+            document.onkeydown = function () {
+                if (event.keyCode == 13) {
+                    Search();
+                }
+            }
+            
+            function Search() {
+                var url = 'https://www.baidu.com/s?wd=' + oInp.value;
+                window.open(url);
+            }
+        </script>
+
+    </body>
+    </html>
